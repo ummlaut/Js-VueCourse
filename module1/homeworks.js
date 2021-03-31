@@ -90,17 +90,17 @@ console.log(item);
 /*
 Чему равно а, почему?
 
-let a = 0 || 'string';    Равно true, потому что 'string' не пустая, значит равно true.
+let a = 0 || 'string';    Равно 'string', потому что возвращает первое попавшееся true.
 
-let a = 1 && 'string';    Равно true, оба значения приводятся к true
+let a = 1 && 'string';    Равно 'string', потому что возвращает первое false или последнее true.
 
-let a = null || 25;    Равно true, потому что 25 приводится к true
+let a = null || 25;    Равно 25, потому что возвращает первое true
 
-let a = null && 25;    Равно false, потому что null приводится к false
+let a = null && 25;    Равно null, потому что возвращает первое false
 
-let a = null || 0 || 35;   Равно true, 35 приводится к true
+let a = null || 0 || 35;   Равно 35, возвращает первое true
 
-let a = null && 0 && 35;   Равно false, потому что хотя бы одно из значений равно false (здесь два)
+let a = null && 0 && 35;   Равно null, потому что  возвращает первое false
 */
 
 //4.2
@@ -116,18 +116,18 @@ let a = null && 0 && 35;   Равно false, потому что хотя бы �
 
 true + 2 || 3, true приведется к единице
 
-+'10' + 1 || 12. Унарный плюс сначала преобразует 10 в число и увеличит на единицу, потом произойдет сложение с единицей.
++'10' + 1 || 11. Унарный плюс превращает строку в число, потом произойдет сложение с единицей.
 
 undefined + 2 || NaN, потому что undefined становится NaN после численного преобразования.
 
 null + 5 || 5, null становится 0 после численного преобразования.
 
-true + undefined || думаю, что trueundefined, потому что оба сначала приведутся к строке.
+true + undefined || NaN, потому что при любых математических операциях с undefined кроме сложения со строкой, результат будет NaN.
  */
 
  //4.3 
- let someX = "someX";
- if (someX == "hidden"){
+ let someX = "hidden";
+ if (someX === "hidden"){
    someX = "visible";
  } else someX="hidden";
 
@@ -159,10 +159,19 @@ true + undefined || думаю, что trueundefined, потому что оба
     discount: '15%' 
   }
 
-  if (item.hasOwnProperty('discount') !== NaN && item.hasOwnProperty('price') !== NaN) {
+ /* if (item.hasOwnProperty('discount') !== NaN && item.hasOwnProperty('price') !== NaN) {
     item.priceWithDiscount = parseInt(item.price) * (parseInt(item.discount) / 100);
   } else if (!item.hasOwnProperty('discount')){
     console.log(item.price);
+  }*/
+
+  const price = parseFloat(item.price);
+  const discount = parseFloat(item.discount);
+  if (!isNaN(price) && !isNaN(discount)) {
+    const priceWithDiscount = price - (price * (discount / 100));
+    console.log(priceWithDiscount)
+  } else {
+    console.log(price);
   }
 
   //4.7
@@ -175,7 +184,7 @@ true + undefined || думаю, что trueundefined, потому что оба
   let min = 10; 
   let max = 20; 
 
-  if (max >= product.price >= min){
+  if (max >= product.price && product.price >= min){
     console.log(item.name)
   } else console.log('Товаров не найдено');
 
