@@ -214,3 +214,13 @@ true + undefined || NaN, потому что при любых математи�
   //5.3
   let someElseIf = 0;
   someElseIf = someElseIf === 0 ? 1 : someElseIf < 0 ? 'less than zero' : someElseIf * 10;
+
+
+// 6 
+//6.1
+const upperString = 'i am in the easycode';
+const upperStringArr = upperString.split(' ');
+for (let i=0; i< upperStringArr.length; i++){
+  upperStringArr[i].charAt(0).toUpperCase();
+}
+console.log(upperStringArr);
