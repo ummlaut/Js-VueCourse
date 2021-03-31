@@ -76,9 +76,10 @@ item.price = 1000;
 item.currency = 'dollar';
 
 //3.3 
+item.details = {};
 item.details = {
   model: 'XR',
   color: 'black'
-}
+};
 
 console.log(item);
