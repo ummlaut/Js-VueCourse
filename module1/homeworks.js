@@ -268,3 +268,17 @@ for (num of numArr){
     console.log(num);
   }
 }
+
+//6.6
+let list = {
+  name: 'denis',
+  work: 'easycode',
+  age: 29
+}
+
+for (let key in list){
+  if (typeof list[key] == "string"){
+    list[key] = list[key].toUpperCase();
+  }
+}
+console.log(list);
