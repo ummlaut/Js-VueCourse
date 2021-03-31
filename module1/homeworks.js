@@ -220,7 +220,51 @@ true + undefined || NaN, потому что при любых математи�
 //6.1
 const upperString = 'i am in the easycode';
 const upperStringArr = upperString.split(' ');
-for (let i=0; i< upperStringArr.length; i++){
-  upperStringArr[i].charAt(0).toUpperCase();
+let capitalize;
+let leftovers;
+for (let i = 0; i< upperStringArr.length; i++){
+  capitalize = upperStringArr[i].slice(0, 1).toUpperCase();
+  leftovers = upperStringArr[i].slice(1);
+  upperStringArr[i] = capitalize + leftovers;
 }
-console.log(upperStringArr);
+const newUpperString = upperStringArr.join(' ');
+console.log(newUpperString);
+
+//6.2
+const reverseString = 'tseb eht ma i';
+let reverseStringArr = reverseString.split('');
+let normalStringArr = [];
+for (let i = 0; i< reverseStringArr.length; i++){
+  normalStringArr[i] = reverseStringArr[(reverseStringArr.length-1) - i];
+}
+let normalString = normalStringArr.join('');
+
+//6.3
+
+const factNum = 10;
+let factResult = 1;
+for (let i = 1; i <= factNum; i++){
+  factResult *= i;
+}
+console.log(factResult);
+
+//6.4
+const jsGoodString = 'JavaScript is a pretty good language';
+const jsGoodStringArr = jsGoodString.split(' ');
+let jsGoodStringCapitalize;
+let jsGoodStringLeftovers;
+for (let i = 0; i< jsGoodStringArr.length; i++){
+  jsGoodStringCapitalize = jsGoodStringArr[i].slice(0, 1).toUpperCase();
+  jsGoodStringLeftovers = jsGoodStringArr[i].slice(1);
+  jsGoodStringArr[i] = jsGoodStringCapitalize + jsGoodStringLeftovers;
+}
+const newjsGoodString = jsGoodStringArr.join('');
+console.log(newjsGoodString);
+
+//6.5
+let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+for (num of numArr){
+    if (num % 2 === 1){
+    console.log(num);
+  }
+}
