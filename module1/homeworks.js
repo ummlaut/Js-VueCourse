@@ -159,4 +159,23 @@ true + undefined || думаю, что trueundefined, потому что оба
     discount: '15%' 
   }
 
-  if (item.hasOwn)
+  if (item.hasOwnProperty('discount') !== NaN && item.hasOwnProperty('price') !== NaN) {
+    item.priceWithDiscount = parseInt(item.price) * (parseInt(item.discount) / 100);
+  } else if (!item.hasOwnProperty('discount')){
+    console.log(item.price);
+  }
+
+  //4.7
+
+  let product = {
+    name: 'Яблоко',
+    price: '10$'
+  };
+
+  let min = 10; 
+  let max = 20; 
+
+  if (max >= product.price >= min){
+    console.log(item.name)
+  } else console.log('Товаров не найдено');
+
