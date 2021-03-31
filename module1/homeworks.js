@@ -188,3 +188,27 @@ true + undefined || NaN, потому что при любых математи�
     console.log(item.name)
   } else console.log('Товаров не найдено');
 
+
+  //5
+
+  //5.1
+  switch(a){
+    case 'block': 
+      console.log('block');
+      break; 
+    case 'none':
+      console.log('none');
+      break;
+    case 'inline':
+      console.log('inline');
+      break;
+    default: 
+      console.log('other');
+  }
+
+  //5.2
+
+  let someIf = someIf === 'hidden' ? 'visible' : 'hidden';
+
+  //5.3
+  let someElseIf = someElseIf === 0 ? 1 : someElseIf < 0 ? 'less than zero' : someElseIf *= 10;
