@@ -27,8 +27,8 @@ let string = "some test string";
 
 //2.1
 
-const firstLetter= string[0];
-const lastLetter = string[string.length-1];
+const firstLetter = string[0];
+const lastLetter = string[string.length - 1];
 console.log(firstLetter, lastLetter);
 
 //2.2
@@ -44,15 +44,16 @@ console.log(stringIndex);
 
 //2.4
 
-const spaceIndex = string.indexOf(' ', 6);
+const spaceIndex = string.indexOf(' ');
+const spaceIndexTwo = string.indexOf(' ', spaceIndex+1)
 console.log(spaceIndex);
 
 //2.5
-const newSlice = string.slice(5, -7);
+const newSlice = string.substr(5, 4);
 console.log(newSlice);
 
 //2.6
-const testSlice = string.slice(5, 9);
+const testSlice = string.slice(5, 10);
 console.log(testSlice);
 
 //2.7
@@ -60,6 +61,6 @@ const newString = string.slice(0, -6);
 console.log(newString);
 
 //2.8
-const a=20, b=16;
+const a = 20, b = 16;
 const concatString = a.toString().concat("", b);
 console.log(concatString);
