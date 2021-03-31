@@ -230,6 +230,23 @@ for (let i = 0; i< upperStringArr.length; i++){
 const newUpperString = upperStringArr.join(' ');
 console.log(newUpperString);
 
+/*
+  Prepod Solution
+
+  let str = 'i am in the easycode';
+  let res = '';
+
+  for (let i = 0; i < str.length; i++) {
+    if (i === 0 || str[i - 1] === ' ') {
+      res += str[i].toUpperCase();
+    } else {
+      res += str[i];
+    }
+  }
+
+  console.log(res);
+ */
+
 //6.2
 const reverseString = 'tseb eht ma i';
 let reverseStringArr = reverseString.split('');
@@ -238,6 +255,19 @@ for (let i = 0; i< reverseStringArr.length; i++){
   normalStringArr[i] = reverseStringArr[(reverseStringArr.length-1) - i];
 }
 let normalString = normalStringArr.join('');
+
+/*
+  Prepod Solution
+
+  let str = 'tseb eht ma i';
+  let res = '';
+
+  for (let i = str.length; i--;) {
+    res += str[i];
+  }
+
+  console.log(res);
+ */
 
 //6.3
 
@@ -277,7 +307,7 @@ let list = {
 }
 
 for (let key in list){
-  if (typeof list[key] == "string"){
+  if (typeof list[key] === "string"){
     list[key] = list[key].toUpperCase();
   }
 }
