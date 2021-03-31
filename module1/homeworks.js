@@ -208,7 +208,9 @@ true + undefined || NaN, потому что при любых математи�
 
   //5.2
 
-  let someIf = someIf === 'hidden' ? 'visible' : 'hidden';
+  let someIf = 'hidden';
+  someIf = someIf === 'hidden' ? 'visible' : 'hidden';
 
   //5.3
-  let someElseIf = someElseIf === 0 ? 1 : someElseIf < 0 ? 'less than zero' : someElseIf *= 10;
+  let someElseIf = 0;
+  someElseIf = someElseIf === 0 ? 1 : someElseIf < 0 ? 'less than zero' : someElseIf * 10;
