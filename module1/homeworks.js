@@ -64,3 +64,21 @@ console.log(newString);
 const a = 20, b = 16;
 const concatString = a.toString().concat("", b);
 console.log(concatString);
+
+//3
+//3.1
+const item ={
+  product: 'iphone'
+}
+
+//3.2
+item.price = 1000;
+item.currency = 'dollar';
+
+//3.3 
+item.details = {
+  model: 'XR',
+  color: 'black'
+}
+
+console.log(item);
