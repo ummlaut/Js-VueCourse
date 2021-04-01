@@ -46,17 +46,3 @@ function guessTheNumber(num) {
     ? "You win"
     : `You are lose, your number is ${num}, the random number is ${rnd} `;
 }
-function guessTheNumber(num) {
-  const number = Number(num);
-
-  if (typeof number !== "number" || isNaN(number))
-    return new Error("Please provide a valid number");
-  if (number < 0 || number > 10)
-    return new Error("Please provide number in range 0 - 10");
-
-  const random = Math.ceil(Math.random() * 10);
-
-  if (random === number) return "You win!";
-
-  return `You are lose, your number is ${number}, the random number is ${random}`;
-}
