@@ -50,19 +50,17 @@ function guessTheNumber(num) {
 // 5
 
 function getArray(num) {
-  let arr = [];
+  const arr = [];
   for (let i = 1; i <= num; i++) {
     arr.push(i);
   }
-  console.log(arr);
   return arr;
 }
 
 //6
 function doubleArray(arr) {
   if (Array.isArray(arr)) {
-    let doubArr = arr.concat(arr);
-    return doubArr;
+    return arr.concat(arr);
   } else return new Error("Please, provide an Array");
 }
 
@@ -78,14 +76,35 @@ function changeCollection(x) {
   return arguments;
 }
 
+/* Prepod solution
+function changeCollection() {
+  const res = [];
+
+  for (let i = 0; i < arguments.length; i++) {
+    if (Array.isArray(arguments[i])) {
+      const el = arguments[i].slice();
+      el.shift();
+      res.push(el)
+    }
+  }
+
+  return res;
+}
+*/
+
 //8
 
 function filterUsers(arr, key, value) {
-  if (arguments.length !== 3) {
-    return new Error("Переданы не все аргументы");
-  }
+  if (!Array.isArray(arr))
+    return new Error("The first argument should be an array");
+  if (typeof key !== "string" || key === "")
+    return new Error("The key should be a valid string");
+  if (value === undefined || value === null)
+    return new Error("The value should be a valid value.");
+
+  const res = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].key !== value) arr.pop(i);
+    if (arr[i].key === value) res.push(arr[i]);
   }
   return arr;
 }
