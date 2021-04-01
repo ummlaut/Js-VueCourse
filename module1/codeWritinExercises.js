@@ -32,7 +32,7 @@ function unicodeString(arg) {
   return res.trim();
 }
 
-//4
+// 4
 function guessTheNumber(num) {
   const number = Number(num);
   if (typeof number !== "number" || isNaN(number)) {
@@ -45,4 +45,47 @@ function guessTheNumber(num) {
   return rnd === num
     ? "You win"
     : `You are lose, your number is ${num}, the random number is ${rnd} `;
+}
+
+// 5
+
+function getArray(num) {
+  let arr = [];
+  for (let i = 1; i <= num; i++) {
+    arr.push(i);
+  }
+  console.log(arr);
+  return arr;
+}
+
+//6
+function doubleArray(arr) {
+  if (Array.isArray(arr)) {
+    let doubArr = arr.concat(arr);
+    return doubArr;
+  } else return new Error("Please, provide an Array");
+}
+
+//7
+
+function changeCollection(x) {
+  for (let i = 0; i < arguments.length; i++) {
+    if (Array.isArray(arguments[i])) {
+      arguments[i].shift();
+    } else return new Error("Please, provide an Array");
+  }
+
+  return arguments;
+}
+
+//8
+
+function filterUsers(arr, key, value) {
+  if (arguments.length !== 3) {
+    return new Error("Переданы не все аргументы");
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].key !== value) arr.pop(i);
+  }
+  return arr;
 }
