@@ -1,4 +1,4 @@
-// 1
+// 9
 function firstFunc(arr, fn) {
   let res = `New value: `;
   for (let i = 0; i < arr.length; i++) {
@@ -41,3 +41,22 @@ function handler4(el) {
 }
 
 console.log(firstFunc(["abs", "123"], handler4));
+
+//10
+
+function every(arr, fn) {
+  if (!Array.isArray(arr))
+    return new Error("The first argument expected as array");
+  if (!fn || typeof fn !== "function")
+    return new Error("The second argument expected as function");
+  for (let i = 0; i < arr.length; i++) {
+    if (!fn(arr[i], i, arr)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function everyCall(el, index, arr) {
+  return el > 5;
+}
