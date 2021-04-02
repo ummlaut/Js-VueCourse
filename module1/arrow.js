@@ -10,6 +10,6 @@ sum(); // 0
 
 //2
 const convertToObject = (num) => ({
-  value: num,
+  value: num, 
   isOdd: Boolean(num % 2),
 });
