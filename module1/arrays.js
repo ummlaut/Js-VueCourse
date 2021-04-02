@@ -56,3 +56,40 @@ minArr.sort((prev, next) => prev.length - next.length);
 console.log(minArr);
 
 //6
+const processors = [
+  { cpu: "intel", info: { cores: 2, сache: 3 } },
+
+  { cpu: "intel", info: { cores: 4, сache: 4 } },
+
+  { cpu: "amd", info: { cores: 1, сache: 1 } },
+
+  { cpu: "intel", info: { cores: 3, сache: 2 } },
+
+  { cpu: "amd", info: { cores: 4, сache: 2 } },
+];
+
+processors.sort((prev, next) => prev.info.cores - next.info.cores);
+console.log(processors);
+
+//7
+let products = [
+  { title: "prod1", price: 5.2 },
+  { title: "prod2", price: 0.18 },
+
+  { title: "prod3", price: 15 },
+  { title: "prod4", price: 25 },
+
+  { title: "prod5", price: 18.9 },
+  { title: "prod6", price: 8 },
+
+  { title: "prod7", price: 19 },
+  { title: "prod8", price: 63 },
+];
+
+function filterCollection(product, min, max) {
+  return product
+    .filter(({ price }) => price >= min && price <= max)
+    .sort((prev, next) => prev.price - next.price);
+}
+
+filterCollection(products, 10, 20);
