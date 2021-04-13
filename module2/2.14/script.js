@@ -11,7 +11,7 @@ for (let i = 0; i < ul.children.length; i++) {
 }
 //4
 const [...links] = document.links;
-links.forEach((link => link.classList.add("custom-link"));
+links.forEach((link) => link.classList.add("custom-link"));
 
 //prepod solutions
 /**2
