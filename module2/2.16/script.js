@@ -14,7 +14,19 @@ btnMsg.addEventListener("mouseleave", () => {
 });
 
 //3
-const tagElem = document.querySelector("#tag");
+/*const tagElem = document.querySelector("#tag");
 document.addEventListener("click", function (e) {
-  tagElem.textContent = e.target;
+  tagElem.textContent = e.target.tagName;
+});
+*/
+//4
+
+btnGen = document.querySelector("#btn-generate");
+const ul = document.querySelector("ul");
+let number = ul.children.length + 1;
+btnGen.addEventListener("click", () => {
+  const li = document.createElement("li");
+  li.textContent = `Item ${number}`;
+  ul.insertAdjacentElement("beforeend", li);
+  number++;
 });
