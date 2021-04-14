@@ -21,7 +21,7 @@ img.setAttribute.alt = "грустный мужик у моря";
 body.insertAdjacentElement("afterbegin", img);
 
 //5
-const sortedLinks = links.sort(
+/*sconst sortedLinks = links.sort(
   (prev.textContent, next.textContent) => prev.textContent - next.textContent
 );
 
